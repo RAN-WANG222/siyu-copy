@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🦐 私域文案生成器 · 教育机构版</title>
+<title>🦐 私域文案生成器 · 教育机构专属</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
@@ -154,13 +154,13 @@
   .generate-btn:active { transform: translateY(0); }
   .generate-btn:disabled { background: #ccc; cursor: not-allowed; }
 
-  /* 提示卡 */
+  /* 提示卡片 */
   .tips-card { background: #FFF8F0; border: 1px solid #FFE0B2; border-radius: 12px; padding: 16px 20px; font-size: 13px; color: #666; line-height: 1.9; margin-bottom: 20px; }
   .tips-card strong { color: #FF8C00; }
   .tips-card li { margin-bottom: 4px; }
   .tips-card .虾虾-tag { display: inline-block; background: #FF8C00; color: white; padding: 1px 6px; border-radius: 4px; font-weight: bold; }
 
-  /* 结果区 */
+  /* 结果区域 */
   .results-section { display: none; }
   .results-section.show { display: block; }
 
@@ -228,7 +228,7 @@
     </div>
   </div>
 
-  <!-- 输入区 -->
+  <!-- 输入区域 -->
   <div class="card">
     <label class="input-label">📌 第一步：选择场景类型</label>
     <div class="scenario-tabs" id="scenarioTabs">
@@ -238,7 +238,7 @@
       </div>
       <div class="scenario-tab" data-scenario="afterClass" onclick="selectScenario(this)">
         📚 课后类
-        <span class="tab-desc">反馈孩子这节课学了什么</span>
+        <span class="tab-desc">反馈孩子本节课体验/收获</span>
       </div>
       <div class="scenario-tab" data-scenario="case" onclick="selectScenario(this)">
         🌟 课程案例类
@@ -252,23 +252,23 @@
 
     <!-- 批量提示（默认隐藏）-->
     <div class="batch-hint" id="batchHint" style="display:none;">
-      <strong>📚 批量模式：</strong>多个课程内容用 <strong style="color:#333;">===</strong> 分隔，例如：<br>
-      课程1内容：第二讲 XXX 重点内容：……<br>
+      <strong>📚 批量模式：</strong>多个课程内容用<strong style="color:#333;">===</strong> 分隔，例如：<br>
+      课程1内容：第二讲 XXX 重点内容：…<br>
       ===<br>
-      课程2内容：第三讲 XXX 重点内容：……<br>
+      课程2内容：第三讲 XXX 重点内容：…<br>
       ===<br>
-      课程3内容：第四讲 XXX 重点内容：……
+      课程3内容：第四讲 XXX 重点内容：…
     </div>
 
     <p class="input-hint" id="inputHint">邀约类：请描述活动内容、目标人群、活动亮点</p>
-    <textarea class="purpose-input" id="purposeInput" rows="6" placeholder="单条模式示例：26年暑假班邀约大班孩子体验英语课，邀请1位同伴进群两个孩子0元领材料
+    <textarea class="purpose-input" id="purposeInput" rows="6" placeholder="单条模式示例：6年暑假班邀约大班孩子体验英语课，邀约3位同伴进群两个孩子9元领材料
 
-批量模式示例：
-第二讲 江河湖海 重点内容：认识大数、有序枚举法……
+批量模式示例：第二讲 江河湖海 重点内容：认识大数、有序枚举法……
 ===
 第三讲 元凶是谁 重点内容：末尾带0的除法、归一归总问题……
 ===
-第四讲 丝竹绕梁庆新苑 重点内容：标数法……"></textarea>
+第四讲 丝竹绕梁庆新春 重点内容：标数法……
+"></textarea>
 
     <div class="divider"></div>
 
@@ -282,7 +282,7 @@
       </div>
       <img class="preview-img" id="previewImg" style="display:none;">
       <p class="img-name" id="imgName" style="display:none;"></p>
-      <button class="remove-img" id="removeImg" style="display:none;">✕ 移除图片</button>
+      <button class="remove-img" id="removeImg" style="display:none;">❌ 移除图片</button>
     </div>
 
     <button class="generate-btn" id="generateBtn" onclick="generatePrompt()">
@@ -299,7 +299,7 @@
   <!-- 结果 -->
   <div class="results-section" id="resultsSection">
     <div class="card">
-      <label class="input-label">✅ 第三步：复制下方Prompt，发给虾虾</label>
+      <label class="input-label">📌 第三步：复制下方Prompt，发给虾虾</label>
       <div class="batch-count" id="batchCount" style="display:none;"></div>
       <div class="prompt-box">
         <div class="prompt-label">// 👇 以下是发给虾虾的Prompt，复制全部内容 👇</div>
@@ -314,7 +314,7 @@
       <strong>📖 使用方法：</strong>
       <ol>
         <li>点击上方 <strong>"📋 一键复制完整Prompt"</strong> 按钮</li>
-        <li>打开与 <span class="虾虾-tag">🦐 虾虾</span> 的对话框，<strong>粘贴并发送</strong></li>
+        <li>打开<span class="虾虾-tag">🦐 虾虾</span> 的对话框，<strong>粘贴并发</strong>送</li>
         <li>虾虾会返回<strong id="resultCount">2个版本</strong>的家长私信文案</li>
         <li>选择最合适的版本，搭配图片直接发给家长</li>
       </ol>
@@ -327,7 +327,7 @@
 </div>
 
 <div class="footer">
-  🦐 由虾虾生成 · 教育机构私域文案助手 · 2026年4月
+  🦐 由虾虾生成 · 教育机构私域文案助手 · 2026版
 </div>
 
 <script>
@@ -341,11 +341,11 @@ function selectMode(btn) {
 
   if (selectedMode === 'batch') {
     document.getElementById('batchHint').style.display = 'block';
-    document.getElementById('purposeInput').placeholder = '第二讲 江河湖海 重点内容：认识大数、有序枚举法……\n===\n第三讲 元凶是谁 重点内容：末尾带0的除法、归一归总问题……\n===\n第四讲 丝竹绕梁庆新苑 重点内容：标数法……';
+    document.getElementById('purposeInput').placeholder = '第二讲 江河湖海 重点内容：认识大数、有序枚举法……\n===\n第三讲 元凶是谁 重点内容：末尾带0的除法、归一归总问题……\n===\n第四讲 丝竹绕梁庆新春 重点内容：标数法……';
     document.getElementById('generateBtn').textContent = '🔥 批量生成Prompt';
   } else {
     document.getElementById('batchHint').style.display = 'none';
-    document.getElementById('purposeInput').placeholder = '单条模式示例：26年暑假班邀约大班孩子体验英语课';
+    document.getElementById('purposeInput').placeholder = '单条模式示例：6年暑假班邀约大班孩子体验英语课，邀约3位同伴进群两个孩子9元领材料';
     document.getElementById('generateBtn').textContent = '🔥 生成Prompt';
   }
 }
@@ -362,7 +362,7 @@ function selectScenario(btn) {
     if (selectedScenario === 'invite') {
       document.getElementById('inputHint').textContent = '邀约类：请描述活动内容、目标人群、活动亮点';
     } else if (selectedScenario === 'afterClass') {
-      document.getElementById('inputHint').textContent = '课后类：请描述这节课重点内容、知识点、学习方法';
+      document.getElementById('inputHint').textContent = '课后类：请描述本节课带孩子做了什么、核心知识点、孩子的表现或收获';
     } else {
       document.getElementById('inputHint').textContent = '课程案例类：请描述课程知识点内容、课堂亮点、方法价值等';
     }
@@ -460,45 +460,49 @@ function getScenarioConfig() {
 **中间：** 围绕家长痛点 + 活动具体价值/福利，福利多时用分号或短句连接
 **结尾：** 轻CTA，不催报名
 **字数：** 80字以内
-
 **结构示例：**
 XX妈妈/爸爸，[孩子现状/时间节点切入]～[家长痛点描述]。[活动名称]，[一句话价值主张]：[福利1]；[福利2]。[名额紧迫感]。感兴趣私信我帮您看还有没有位置`;
   } else if (selectedScenario === 'afterClass') {
-    scenarioText = '课后类：反馈孩子这节课学了什么，回家可以怎么聊';
+    scenarioText = '课后类：反馈孩子本节课体验/收获，适合试听课/体验课后发给家长';
     versionLabel = '版本A（亲子对话型）、版本B（知识价值型）';
     scenarioRules = `
 ### 课后类文案规则
-**开头：** 直接陈述学了什么知识点，不用设问句
-**中间：** 说清楚学了什么有价值的内容，课堂是怎么教的，孩子会有什么收获
-**结尾：** 引导家长回家跟孩子聊，不强迫
-**特别注意：** 不能写"今天学了什么"，要写"这阶段学了"、"这个内容"
+**开头：** 直接陈述孩子接触了什么知识点，用"接触了"、"了解了"等词汇开头，不用"学了什么"、"今天这节课我们一起"
+**中间：** 说清楚本节课课堂核心内容 + 孩子这节课的具体表现或收获
+**结尾：** 自然引导家长回家跟孩子聊这节课的内容，不强迫
 **字数：** 80-100字
-
+**禁止出现：**
+- 不能写"今天学了什么"、"今天这节课我们一起"、"课堂上"等主观描述
+- 不能写空洞形容（如"很认真"、"很棒"），要写具体表现或收获
+- 禁止出现"提分/保分/承诺成绩/奥数相关词汇"
+**收获体现方式（可选其一或结合）：**
+- 孩子能用自己的话复述/解释
+- 敢于主动分享思路
+- 有具体作品/成果带回家
+- 对某个知识点印象深刻
 **结构示例：**
-XX妈妈/爸爸，孩子这阶段学了[知识点]，[衔接教材]。[课堂形式/方法描述]。[孩子收获]。回去可以问问孩子：[亲子话题引导]。`;
+XX妈妈/爸爸，孩子这节课接触了[知识点]。[课堂内容描述]。[孩子具体收获描述，如"现在能用大饼图解释还原问题"或"敢于在课堂上主动分享自己的思路"]。回去可以问问孩子：[亲子话题引导]。`;
   } else {
     scenarioText = '课程案例类：分享课程知识点和亮点给家长，增强信任感和课程认同';
     versionLabel = '版本A（故事叙述型）、版本B（亮点提炼型）';
     scenarioRules = `
 ### 课程案例类文案规则
 **开头：** 直接陈述学了什么知识点，不用设问句
-**中间：** 围绕知识点选2-3个亮点维度来写：
-  - 衔接校内：写出教材单元（如"人教X年级X册"）
+**中间：** 围绕知识点2-3个亮点维度来写：
+  - 衔接校内：写出教材单元（如"人教X年级X单元"）
   - 前后半节分：说明课堂节奏（如"前半节学X，后半节练X"）
   - 深层解释方法：讲思维方法本质（如"有序枚举的本质是尝试"）
-  - **方法贯穿年级（必须写）：说明这个方法/知识点会持续学到哪个年级，小升初/杯赛是否常考**
-  - **关键词意识（如适用）：题目中出现哪些关键词，考核的就是这个方法（如"可能有几种"）**
+  - **方法贯穿年级（必须写）：说明这个方法/知识点会持续学到哪个年级，小升初/杯赛是否常见**
+  - **关键词意识（如适用）：题目中出现哪些关键词，考核的就是这个方法（如"题目出现'逐一列举'往往考的就是有序枚举"）
   - 方法迁移价值：能解决数学和生活中的问题
-  - 新课改理念：不仅会解题，更要找到关键词
+  - 新课改理念：不仅会解题，更要找到关键点
 **结尾：** 方法长期价值自然呈现，不贴"有用/有帮助"等空标签；可自然引出课程亮点或带轻CTA
 **特别注意：**
-  - ❌ 不能写"今天这节课"、"今天课堂上"、"有没有遇到过"——要直接陈述
-  - ❌ 结尾不能说"学扎实了很有用"、"对高年级有帮助"这类空话，要讲清楚方法本身的价值
+  - 不能写"今天这节课"、"今天课堂上"、"有没有遇到过"——要直接陈述
+  - 结尾不能写"学扎实了很有用"、"对高年级有帮助"这类空话，要讲清楚方法本身的价值
 **字数：** 80-120字
-
 **结构示例（版本A）：**
-XX妈妈/爸爸，孩子这阶段学了[知识点]，[衔接校内，如"人教X年级X册"]。[前后半节课堂节奏]。[方法本质：如"有序枚举的本质是尝试"]。[方法贯穿年级+小升初是否常考]。[关键词提示：如题目出现"可能有几种"考的往往就是这个]。学会了这个不仅解数学题，生活中也用得上。[轻CTA]。
-
+XX妈妈/爸爸，孩子这阶段学了[知识点]，[衔接校内，如"人教X年级X单元"]。[前后半节课堂节奏]。[方法本质：如"有序枚举的本质是尝试"]。[方法贯穿年级+小升初是否常考]。[关键词提示：如题目出现"逐一列举"往往考的往往就是这个]。学会了这个不仅解数学题，生活中也用得上。[轻CTA]
 **结构示例（版本B）：**
 XX妈妈/爸爸，[知识点]是[X年级重点]。[课堂核心方法]，[方法本质一句话]——方法持续到[X年级]，小升初常考，[关键题型关键词]。学透了解题思路清晰很多。[轻CTA]。`;
   }
@@ -510,7 +514,6 @@ function buildSinglePrompt(purpose, hasImage, fileName) {
   const { scenarioText, scenarioRules, versionLabel } = getScenarioConfig();
 
   let p = `【虾虾任务】请按以下目的，生成2个版本的「教育机构家长私信文案」
-
 ---
 
 ## 📌 场景类型
@@ -565,29 +568,28 @@ ${item.trim()}`).join('\n\n');
     : '无配图，跳过附言部分。';
 
   let outputFormat = hasImage
-    ? `### 课程1：${versionLabel}
+    ? `### 课程1的${versionLabel}
 【版本A】：...
 【版本B】：...
 【顾问附言】：...
 
-### 课程2：${versionLabel}
+### 课程2的${versionLabel}
 【版本A】：...
 【版本B】：...
 【顾问附言】：...
 
 ...（以此类推）`
-    : `### 课程1：${versionLabel}
+    : `### 课程1的${versionLabel}
 【版本A】：...
 【版本B】：...
 
-### 课程2：${versionLabel}
+### 课程2的${versionLabel}
 【版本A】：...
 【版本B】：...
 
 ...（以此类推）`;
 
-  let p = `【虾虾任务】请按以下${items.length}个课程内容，批量生成对应的家长私信文案。
-
+  let p = `【虾虾任务】请按以下${items.length}个课程内容，批量生成对应的家长私信文案
 ---
 
 ## 📌 场景类型
@@ -610,16 +612,14 @@ ${imageNote}
 
 ---
 
-## 📚 课程内容（共${items.length}个，用 === 分隔）
-
+## 📚 课程内容（共${items.length}个，用===分隔）
 ${courseList}
 
 ---
 
 ## 📋 输出格式
 
-请按以上${items.length}个课程，逐一生成对应的2个版本文案，格式如下：
-
+请按以上${items.length}个课程，逐一生成对应2个版本文案，格式如下：
 ${outputFormat}
 
 请直接输出所有结果，不要有多余的解释，直接给文案内容。`;
@@ -632,7 +632,7 @@ function copyPrompt() {
   const text = document.getElementById('promptOutput').textContent;
   navigator.clipboard.writeText(text).then(() => {
     const btn = document.getElementById('copyPromptBtn');
-    btn.textContent = '✅ 已复制！发给虾虾吧';
+    btn.textContent = '✅ 已复制！发给虾虾';
     btn.classList.add('copied');
     setTimeout(() => {
       btn.textContent = '📋 一键复制完整Prompt';
